@@ -1,0 +1,79 @@
+﻿@model IEnumerable<BlogTemplateMvc.Data.Models.Message>
+
+@{
+    ViewBag.Title = "ViewMessages";
+}
+
+@foreach (var message in Model)
+{
+    var sendOn = message.SentOn.ToString(@"yyyy/MM/dd hh:mm", System.Globalization.CultureInfo.InvariantCulture);
+    <div id="messages">
+        <a href="@Url.Action("SeeMessage", "LoggedIn", new { id = message.Id })">
+            <span>
+                @Html.DisplayFor(modelItem => message.UserName) -----
+            </span>
+            <span>
+                @Html.DisplayFor(modelItem => message.Email) -----
+            </span>
+            <span>
+                @sendOn
+            </span>
+        </a>
+    </div>
+}
+<div id="go-to-page">
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" id="CurrentPage" name="CurrentPage" value="@ViewBag.CurrentPage" />
+                    <input type="hidden" id="LastPage" name="LastPage" value="@ViewBag.LastPage" />
+    }
+    @if (ViewBag.CurrentPage != 1)
+    {
+        <span class="glyphicon glyphicon-circle-arrow-left pageMove" id="Previous"></span>
+    }
+
+    <span id="page-number">@ViewBag.CurrentPage</span>
+
+    @if (ViewBag.LastPage != ViewBag.CurrentPage)
+    {
+        <span class="glyphicon glyphicon-circle-arrow-right pageMove" id="Next"></span>
+    }
+</div>
+
+<script src="~/Scripts/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Previous").click(function () {
+            if (CalculatePage("Previous")) {
+                $("form").submit();
+            };
+        });
+
+        $("#Next").click(function () {
+            if (CalculatePage("Next")) {
+                $("form").submit();
+            };
+        });
+    });
+
+    function CalculatePage(move) {
+        var currentPage = parseInt($("#CurrentPage").val());
+        var lastPage = parseInt($("#LastPage").val());
+
+        if (currentPage == 1 && move == "Previous") {
+            return false;
+        }
+        if (currentPage == lastPage && move == "Next") {
+            return false;
+        }
+
+        if (move == "Previous") {
+            currentPage--;
+        } else {
+            currentPage++;
+        }
+        $("#CurrentPage").val(currentPage);
+        return true;
+    }
+</script>

@@ -1,0 +1,120 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.backgroundImg {
+    background-image: url('../Images/tumblr backgrounds 5-1024x640.jpg');
+    width: 1584px;
+    height: 450px;
+    margin-left: -223px !important;
+    padding: 0 !important;
+    display: block;
+    background-size: cover;
+}
+
+#contact-bg-image {
+    background-image: url('../Images/picjumbo.com_IMG_6643.jpg');
+    width: 1584px ;
+    height:450px ;
+    margin-left: -223px !important;
+    padding: 0 !important;
+    display: block;
+    background-size:100% auto;
+}
+
+.glyphiconSize {
+    font-size: 2.2em;
+}
+
+.centered {
+    text-align: center;
+}
+
+#postImg {
+    width: 600px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.pageMove{
+    cursor:pointer;
+    padding-left:20px ;
+    padding-right:20px ;
+    font-size:2em;
+}
+
+.latest-post{
+    text-align:center;
+    font-family:'Imprint MT Shadow';
+    font-size:66px;
+    color:rgba(85, 81, 79, 0.85);
+}
+
+.posted-on{
+    display:block;
+    text-align:right;
+}
+
+.postSmallImage{
+    margin-left:240px;
+    width: 250px;
+    height: 150px;
+    border-radius:15px
+}
+
+#page-number{
+    font-size:40px;
+}
+
+#go-to-page{
+    text-align:center;
+}
+
+#post-content{
+    white-space:pre-line;
+}
+
+#Content{
+    max-width:650px;
+    width:650px ;
+    height:400px
+}
+
+#MessageText{
+    max-width:750px;
+}
+
+#messages{
+    text-align:center;
+}
+
+#messages-link{
+    position:relative;
+    margin-left:1000px;
+    font-family:Castellar;
+    font-size:36px;
+    font-weight:bold;
+    color:rgb(0, 0, 0)
+}

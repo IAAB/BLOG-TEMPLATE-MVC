@@ -1,0 +1,52 @@
+﻿@model BlogTemplateMvc.Data.Models.Post
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<header class="intro-header backgroundImg">
+    <div class="container">
+        <div class="row">
+            <div class="site-heading">
+                <h1>Your Blog Name</h1>
+                <hr class="small">
+                <span class="subheading">What the blog is about</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h2 class="latest-post">Latest post</h2>
+            <hr />
+            @{
+                var postedOn = Model.PostedOn.ToString(@"yyyy/MM/dd hh:mm", System.Globalization.CultureInfo.InvariantCulture);
+            }
+
+            <div class="post-preview">
+                <a href="@Url.Action("SeePost","Home",new { id=Model.Id})">
+                    <h2 class="post-title">
+                        @Html.DisplayFor(modelItem => Model.Title)
+                    </h2>
+                    <h3 class="post-subtitle">
+                        @Html.DisplayFor(modelItem => Model.Subtitle)
+                    </h3>
+                </a>
+                @if (Model.Image != null)
+                {
+                    string imageBase64 = Convert.ToBase64String(Model.Image);
+                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+
+                    <img src="@imageSrc" class="postSmallImage" />
+                }
+                <div class="glyphicon glyphicon-time posted-on">
+                    @postedOn
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

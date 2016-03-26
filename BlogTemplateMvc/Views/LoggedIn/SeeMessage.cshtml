@@ -1,0 +1,25 @@
+﻿@model BlogTemplateMvc.Data.Models.Message
+@{
+    ViewBag.Title = "SeeMessage";
+}
+
+<h3 class="post-heading centered">@Model.UserName</h3>
+<h3 class="post-heading centered">@Model.Email</h3>
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div id="post-content">
+                    @Model.MessageText
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr />
+<div class="glyphicon glyphicon-time posted-on">
+    @Model.SentOn.ToString(@"yyyy/MM/dd hh:mm", System.Globalization.CultureInfo.InvariantCulture)
+</div>

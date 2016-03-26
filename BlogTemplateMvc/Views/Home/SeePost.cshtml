@@ -1,0 +1,35 @@
+﻿@model BlogTemplateMvc.Data.Models.Post
+
+@{
+    ViewBag.Title = "SeePost";
+}
+
+<h1 class="post-heading centered">@Model.Title</h1>
+<h2 class="subheading centered">@Model.Subtitle</h2>
+
+
+@if (Model.Image != null)
+{
+    string imageBase64 = Convert.ToBase64String(Model.Image);
+    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+
+    <img src="@imageSrc" id="postImg" />
+    <hr />
+}
+
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div id="post-content">
+                    @Model.Content
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr />
+<div class="glyphicon glyphicon-time posted-on">
+    @Model.PostedOn.ToString(@"yyyy/MM/dd hh:mm", System.Globalization.CultureInfo.InvariantCulture)
+</div>

@@ -1,0 +1,96 @@
+﻿@model IEnumerable<BlogTemplateMvc.Data.Models.Post>
+
+@{
+    ViewBag.Title = "ViewAllPosts";
+}
+
+<h2 class="latest-post">Latest posts</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @foreach (var post in Model)
+            {
+                var postedOn = post.PostedOn.ToString(@"yyyy/MM/dd hh:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                <div class="post-preview">
+                    <a href="@Url.Action("SeePost", "Home", new { id = post.Id })">
+                        <h2 class="post-title">
+                            @Html.DisplayFor(modelItem => post.Title)
+                        </h2>
+                        <h3 class="post-subtitle">
+                            @Html.DisplayFor(modelItem => post.Subtitle)
+                        </h3>
+                    </a>
+                    @if (post.Image != null)
+                    {
+                        string imageBase64 = Convert.ToBase64String(post.Image);
+                        string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+
+                        <img src="@imageSrc" class="postSmallImage" />
+                    }
+                </div>
+                <div class="glyphicon glyphicon-time posted-on">
+                    @postedOn
+                </div>
+                <hr />
+            }
+            <div id="go-to-page">
+                @using (Html.BeginForm())
+                {
+                    <input type="hidden" id="CurrentPage" name="CurrentPage" value="@ViewBag.CurrentPage" />
+                    <input type="hidden" id="LastPage" name="LastPage" value="@ViewBag.LastPage" />
+                }
+                @if (ViewBag.CurrentPage != 1)
+                {
+                    <span class="glyphicon glyphicon-circle-arrow-left pageMove" id="Previous"></span>
+                }
+
+                <span id="page-number">@ViewBag.CurrentPage</span>
+
+                @if (ViewBag.LastPage != ViewBag.CurrentPage)
+                {
+                    <span class="glyphicon glyphicon-circle-arrow-right pageMove" id="Next"></span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-2.2.1.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Previous").click(function () {
+            if (CalculatePage("Previous")) {
+                $("form").submit();
+            };
+        });
+
+        $("#Next").click(function () {
+            if (CalculatePage("Next")) {
+                $("form").submit();
+            };
+        });
+    });
+
+    function CalculatePage(move) {
+        var currentPage = parseInt($("#CurrentPage").val());
+        var lastPage = parseInt($("#LastPage").val());
+
+        if (currentPage == 1 && move == "Previous") {
+            return false;
+        }
+        if (currentPage == lastPage && move == "Next") {
+            return false;
+        }
+
+        if (move == "Previous") {
+            currentPage--;
+        } else {
+            currentPage++;
+        }
+        $("#CurrentPage").val(currentPage);
+        return true;
+    }
+</script>
