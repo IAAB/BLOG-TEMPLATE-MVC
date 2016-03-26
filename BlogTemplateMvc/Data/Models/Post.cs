@@ -13,11 +13,11 @@ namespace BlogTemplateMvc.Data.Models
         [Key]
         public int Id { get; set; }
 
-        [MaxLength(70,ErrorMessage ="Title should not be more than 70 charecters!")]
+        [MaxLength(120,ErrorMessage ="Title should not be more than 120 charecters!")]
         [Required]
         public string Title { get; set; }
 
-        [MaxLength(70,ErrorMessage = "Title should not be more than 70 charecters!")]
+        [MaxLength(150,ErrorMessage = "Title should not be more than 150 charecters!")]
         public string Subtitle { get; set; }
 
         [Required]

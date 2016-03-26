@@ -118,3 +118,17 @@ textarea {
     font-weight:bold;
     color:rgb(0, 0, 0)
 }
+
+#view-older-posts{
+    text-decoration:none;
+    position:relative;
+    bottom:-295px;
+    font-size:36px;
+    font-weight:700;
+}
+
+#view-older-posts :hover{
+    color:#8fc112;
+    font-size:38px;
+    text-decoration:none;
+}

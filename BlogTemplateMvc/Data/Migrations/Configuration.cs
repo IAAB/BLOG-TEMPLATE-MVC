@@ -10,14 +10,21 @@ namespace BlogTemplateMvc.Migrations
     {
         public Configuration()
         {
-            //You may have to chanche this to false in release mod
+            //You may have to chanche these to false in release mod
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(BlogTemplateMvc.Context.BlogMVCDbContext context)
         {
-            //Use this method if you want to seed some data in Database
+            //IMPORTANT Run this method only once to have some post in database, because of the NullRefeneceExeption.
+            context.Posts.AddOrUpdate(new Post
+            {
+                Title = "Some title",
+                Subtitle = "This is subtitle",
+                Content = "Some textSome textSome textSome textSome textSome textSome textSome textSome textSome textSome textSome text",
+                PostedOn = DateTime.Now
+            });
         }
     }
 }
