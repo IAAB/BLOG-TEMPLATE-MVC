@@ -1,5 +1,0 @@
-D:\VS Projects\DarenaBlog\DarenaBlog.EF\bin\Debug\DarenaBlog.EF.dll
-D:\VS Projects\DarenaBlog\DarenaBlog.EF\bin\Debug\DarenaBlog.EF.pdb
-D:\VS Projects\DarenaBlog\DarenaBlog.EF\obj\Debug\DarenaBlog.EF.csprojResolveAssemblyReference.cache
-D:\VS Projects\DarenaBlog\DarenaBlog.EF\obj\Debug\DarenaBlog.EF.dll
-D:\VS Projects\DarenaBlog\DarenaBlog.EF\obj\Debug\DarenaBlog.EF.pdb
