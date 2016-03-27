@@ -178,8 +178,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\1920x1080_gorgeous_mountains_panorama_hdr.jpg" />
     <Content Include="Images\picjumbo.com_IMG_6643.jpg" />
-    <Content Include="Images\tumblr backgrounds 5-1024x640.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />

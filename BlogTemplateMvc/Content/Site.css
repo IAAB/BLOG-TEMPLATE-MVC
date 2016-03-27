@@ -24,23 +24,15 @@ textarea {
 }
 
 .backgroundImg {
-    background-image: url('../Images/tumblr backgrounds 5-1024x640.jpg');
-    width: 1584px;
-    height: 450px;
-    margin-left: -223px !important;
-    padding: 0 !important;
-    display: block;
-    background-size: cover;
+    background-image: url('../Images/1920x1080_gorgeous_mountains_panorama_hdr.jpg');
+    width: 100%;
+    height: auto;
 }
 
 #contact-bg-image {
     background-image: url('../Images/picjumbo.com_IMG_6643.jpg');
-    width: 1584px ;
-    height:450px ;
-    margin-left: -223px !important;
-    padding: 0 !important;
-    display: block;
-    background-size:100% auto;
+    width: 100%;
+    height: auto;
 }
 
 .glyphiconSize {
@@ -53,82 +45,102 @@ textarea {
 
 #postImg {
     width: 600px;
-    height: 400px;
+    height: auto;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
 
-.pageMove{
-    cursor:pointer;
-    padding-left:20px ;
-    padding-right:20px ;
-    font-size:2em;
+.pageMove {
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 2em;
 }
 
-.latest-post{
-    text-align:center;
-    font-family:'Imprint MT Shadow';
-    font-size:66px;
-    color:rgba(85, 81, 79, 0.85);
+.latest-post {
+    text-align: center;
+    font-family: 'Imprint MT Shadow';
+    font-size: 66px;
+    color: rgba(85, 81, 79, 0.85);
 }
 
-.posted-on{
-    display:block;
-    text-align:right;
+.posted-on {
+    display: block;
+    text-align: right;
 }
 
-.postSmallImage{
-    margin-left:240px;
+.postSmallImage {
+    margin: 0 auto;
     width: 250px;
+    max-width: 100%;
+    display: block;
     height: 150px;
-    border-radius:15px
+    border-radius: 15px;
 }
 
-#page-number{
-    font-size:40px;
+#posted-on {
+    display: block;
+    text-align: right;
+    margin-right: 15%;
 }
 
-#go-to-page{
-    text-align:center;
+#page-number {
+    font-size: 40px;
 }
 
-#post-content{
-    white-space:pre-line;
+#go-to-page {
+    text-align: center;
 }
 
-#Content{
-    max-width:650px;
-    width:650px ;
-    height:400px
+#post-content {
+    white-space: pre-line;
 }
 
-#MessageText{
-    max-width:750px;
+#Content {
+    max-width: 650px;
+    width: 650px;
+    height: 400px;
 }
 
-#messages{
-    text-align:center;
+#MessageText {
+    max-width: 750px;
 }
 
-#messages-link{
-    position:relative;
-    margin-left:1000px;
-    font-family:Castellar;
-    font-size:36px;
-    font-weight:bold;
-    color:rgb(0, 0, 0)
+#messages {
+    text-align: center;
 }
 
-#view-older-posts{
-    text-decoration:none;
-    position:relative;
-    bottom:-295px;
-    font-size:36px;
-    font-weight:700;
+#messages-link {
+    position: relative;
+    margin-left: 1000px;
+    font-family: Castellar;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 
-#view-older-posts :hover{
-    color:#8fc112;
-    font-size:38px;
-    text-decoration:none;
+#view-older-posts {
+    position: absolute;
+    text-decoration: none;
+    text-align: right;
+    top: 130%;
+    right: 5%;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+    #view-older-posts :hover {
+        color: rgba(206, 60, 5, 0.89);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 120%;
+    }
+
+a {
+    color: rgba(206, 60, 5, 0.89);
+}
+
+.cover-header{
+    color:rgba(85, 81, 79, 0.85)
 }
