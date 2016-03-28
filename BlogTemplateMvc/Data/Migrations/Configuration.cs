@@ -1,11 +1,9 @@
+using BlogTemplateMvc.Data.Models;
+using System;
+using System.Data.Entity.Migrations;
+
 namespace BlogTemplateMvc.Migrations
 {
-    using Data.Models;
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
     internal sealed class Configuration : DbMigrationsConfiguration<BlogTemplateMvc.Context.BlogMVCDbContext>
     {
         public Configuration()
